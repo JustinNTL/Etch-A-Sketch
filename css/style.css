@@ -1,0 +1,22 @@
+body {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height: 100vh;
+}
+
+.gridPanels {
+  display: inline-grid;
+  grid-template-columns: repeat(16, 2fr);
+  grid-template-rows: repeat(16, 2fr);
+  width: 950px;
+  height: 600px;
+  border: 30px solid #e80000;
+  border-radius: 10px;
+}
+
+.panel {
+  
+  border: 1px solid black;
+  
+}

@@ -16,7 +16,11 @@ body {
 }
 
 .panel {
-  
+  background-color: white;
   border: 1px solid black;
-  
+}
+
+.colorPanel {
+  background-color: grey;
+  border: 1px solid black;
 }

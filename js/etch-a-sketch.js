@@ -8,13 +8,12 @@ for (let i=0; i<256; i++) {
   }
 };
 
-const panel = document.querySelector('div');
-panel.addEventListener('mouseover', function(e) {
+gridPanels.addEventListener('mouseover', function(e) {
   e.target.classList.replace('panel', 'colorPanel');
 });
 
 updateGrid = () => {
-  panel.innerText = '';
+  gridPanels.innerText = '';
   let panelNum = prompt('Please specify new grid dimensions between 2-100: ');
   while (isNaN(panelNum) || parseInt(panelNum) < 2 || parseInt(panelNum) > 100) {
     alert(`${panelNum} is not a valid entry, please try again.`);

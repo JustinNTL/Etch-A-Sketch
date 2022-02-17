@@ -28,6 +28,9 @@ updateGrid = () => {
     'grid-template-rows', `repeat(${panelNum}, 2fr)`
   );
   generateGrid(panelNum, panelNum);
+  if (panelNum !== null) {
+    return generateGrid(defaultColumn, defualtRow)
+  }
 };
 
 const resetBtn = document.querySelector('.resetBtn');

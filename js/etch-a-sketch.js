@@ -13,4 +13,17 @@ panel.addEventListener('mouseover', function(e) {
   e.target.classList.replace('panel', 'colorPanel');
 });
 
+updateGrid = () => {
+  panel.innerText = '';
+  let panelNum = prompt('Please specify new grid dimensions between 2-100: ');
+  while (isNaN(panelNum) || parseInt(panelNum) < 2 || parseInt(panelNum) > 100) {
+    alert(`${panelNum} is not a valid entry, please try again.`);
+    panelNum = prompt('Please specify new grid dimensions between 2-100: ');
+  }
+}
+
+const resetBtn = document.querySelector('.resetBtn');
+resetBtn.addEventListener('click', updateGrid);
+
 generateGrid();
+

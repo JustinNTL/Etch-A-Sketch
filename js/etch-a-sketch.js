@@ -15,7 +15,6 @@ gridPanels.addEventListener('mouseover', function(e) {
 });
 
 updateGrid = () => {
-  gridPanels.innerText = '';
   let panelNum = prompt('Please specify new grid dimensions between 2-100: ');
   while (isNaN(panelNum) || parseInt(panelNum) < 2 || parseInt(panelNum) > 100) {
     alert(`${panelNum} is not a valid entry, please try again.`);
@@ -27,9 +26,9 @@ updateGrid = () => {
   gridPanels.style.setProperty(
     'grid-template-rows', `repeat(${panelNum}, 2fr)`
   );
-  generateGrid(panelNum, panelNum);
   if (panelNum !== null) {
-    return generateGrid(defaultColumn, defualtRow)
+    gridPanels.innerText = '';
+    generateGrid(panelNum, panelNum);
   }
 };
 

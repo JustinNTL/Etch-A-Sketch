@@ -87,22 +87,33 @@ h1:focus {
     }    
 }
 
-.resetBtn {
-  background-color: rgb(16, 224, 16);
+.resetBtn, 
+.colorBtn {
   border: 0px;
-  margin: 10px 0px 10px 0px;
+  margin: 10px 5px 10px 5px;
   padding: 10px 28px 10px 28px;
   font-size: 14px;
   font-family: monospace;
   transition: all .3s;
   border-radius: 5px;
+}
+
+.resetBtn {
+  background-color: rgb(16, 224, 16);
   border-bottom: 4px solid orange;
 }
 
-.resetBtn:hover {
+.resetBtn:hover, 
+.colorBtn:hover {
   transform: scale(1.05);
 }
 
-.resetBtn:active {
+.resetBtn:active, 
+.colorBtn:active {
   transform: scale(.95);
+}
+
+.colorBtn {
+  background-color: rgb(13, 200, 233);
+  border-bottom: 4px solid rgb(255, 0, 255);
 }

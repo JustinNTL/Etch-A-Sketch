@@ -35,5 +35,12 @@ updateGrid = () => {
 const resetBtn = document.querySelector('.resetBtn');
 resetBtn.addEventListener('click', updateGrid);
 
+rainbowPanel = () => {
+  
+}
+
+const colorBtn = document.querySelector('colorBtn');
+colorBtn.addEventListener('click', rainbowPanel);
+
 generateGrid(defaultColumn, defualtRow);
 

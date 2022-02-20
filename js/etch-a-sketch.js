@@ -1,18 +1,18 @@
 const gridPanels = document.querySelector('.gridPanels');
 const defaultColumn = 16;
 const defualtRow = 16;
+const resetBtn = document.querySelector('.resetBtn');
+const colorBtn = document.querySelector('.colorBtn');
+let active = false;
 
 function generateGrid(defaultColumn, defualtRow) {
 for (let i=0; i< (defaultColumn * defualtRow); i++) {
   const panel = document.createElement('div');
   panel.classList = 'panel';
+  panel.addEventListener('mouseover', () => colorPanel(panel));
   gridPanels.appendChild(panel);
   }
 }
-
-gridPanels.addEventListener('mouseover', function(e) {
-  e.target.classList.replace('panel', 'colorPanel');
-});
 
 updateGrid = () => {
   let panelNum = prompt('Please specify new grid dimensions between 2-100: ');
@@ -32,14 +32,21 @@ updateGrid = () => {
   }
 };
 
-const resetBtn = document.querySelector('.resetBtn');
-resetBtn.addEventListener('click', updateGrid);
-
-rainbowPanel = () => {
-  
+function colorPanel(panel) {
+  let colorHue = Math.random() * 360;
+  if(active) {
+    panel.classList.remove('colorPanel');
+    panel.style.setProperty('background-color', `hsl(${colorHue}, 100%, 50%)`);
+  } else {
+    panel.classList.add('colorPanel');
+  }
 }
 
-const colorBtn = document.querySelector('colorBtn');
+rainbowPanel = () => {
+  active = !active;
+}
+
+resetBtn.addEventListener('click', updateGrid);
 colorBtn.addEventListener('click', rainbowPanel);
 
 generateGrid(defaultColumn, defualtRow);

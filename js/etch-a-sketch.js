@@ -50,4 +50,3 @@ resetBtn.addEventListener('click', updateGrid);
 colorBtn.addEventListener('click', rainbowPanel);
 
 generateGrid(defaultColumn, defualtRow);
-
